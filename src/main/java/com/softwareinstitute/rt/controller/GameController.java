@@ -1,4 +1,4 @@
-package com.softwareinstitute.rt;
+package com.softwareinstitute.rt.controller;
 
 import com.softwareinstitute.rt.ui.ConsoleLogger;
 import com.softwareinstitute.rt.ui.GameView;

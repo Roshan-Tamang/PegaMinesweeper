@@ -1,5 +1,7 @@
 package com.softwareinstitute.rt;
 
+import com.softwareinstitute.rt.data.Flag;
+import com.softwareinstitute.rt.data.Tiles;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

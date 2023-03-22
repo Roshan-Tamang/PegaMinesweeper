@@ -1,4 +1,4 @@
-package com.softwareinstitute.rt;
+package com.softwareinstitute.rt.data;
 
 public class Tiles {
 
