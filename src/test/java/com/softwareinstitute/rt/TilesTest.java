@@ -2,11 +2,9 @@ package com.softwareinstitute.rt;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class TilesTest {
-
+class TilesTest {
 
     @Test
     void testing_tiles_isUntouched(){
@@ -28,6 +26,16 @@ public class TilesTest {
 
     }
 
+    @Test
+    void testing_tiles_Flag(){
+
+        Tiles tiles = new Tiles();
+
+        tiles.setFlag(Flag.FLAGGED);
+
+        assertEquals(Flag.FLAGGED,tiles.getFlag(),"The Flag should match");
+
+    }
 
 
 }

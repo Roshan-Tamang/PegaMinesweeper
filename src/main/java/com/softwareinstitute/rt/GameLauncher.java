@@ -5,11 +5,12 @@ public class GameLauncher {
 
         String message = callHelloWorld();
 
-        System.out.println(message);
     }
 
     public static String callHelloWorld() {
 
         return "Hello world - Minesweeper";
+
+
     }
 }
