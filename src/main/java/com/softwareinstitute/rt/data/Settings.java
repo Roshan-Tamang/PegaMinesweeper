@@ -2,33 +2,34 @@ package com.softwareinstitute.rt.data;
 
 public class Settings {
 
-    private int height= 4;
+    private static int height= 4;
 
-    private int width = 4;
+    private static int width = 4;
 
-    private Difficulty difficulty = Difficulty.LOW;
+    private static Difficulty difficulty = Difficulty.LOW;
 
-    public int getHeight() {
+    public static int getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
+    public static void setHeight(int height) {
+        Settings.height = height;
     }
 
-    public int getWidth() {
+    public static int getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
+    public static void setWidth(int width) {
+        Settings.width = width;
     }
 
-    public Difficulty getDifficulty() {
+    public static Difficulty getDifficulty() {
         return difficulty;
     }
 
-    public void setDifficulty(Difficulty difficulty) {
-        this.difficulty = difficulty;
+    public static void setDifficulty(Difficulty difficulty) {
+        Settings.difficulty = difficulty;
     }
+
 }

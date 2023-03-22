@@ -5,6 +5,12 @@ public class GameBoard {
     private int height;
     private int width;
 
+    
+    public GameBoard(){
+        this.height = Settings.getHeight();
+        this.width = Settings.getWidth();
+    }
+
 
     public int getHeight() {
         return height;
@@ -21,10 +27,6 @@ public class GameBoard {
     public void setWidth(int width) {
         this.width = width;
     }
-
-
-
-
 
 
 }

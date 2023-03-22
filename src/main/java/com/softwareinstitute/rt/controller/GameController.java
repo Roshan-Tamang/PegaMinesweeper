@@ -13,12 +13,12 @@ public class GameController {
 
         ConsoleLogger.printToConsole(gameView.getMenu());
 
-        int userChoice = 1;
+        int userChoice = 0;
 
         switch (userChoice){
             case 0:
                 gameBoard = new GameBoard();
-
+                startGame();
                 break;
             case 1:
                 break;
@@ -26,14 +26,25 @@ public class GameController {
                 break;
             default:
                 break;
-
         }
 
 
     }
 
+    public void startGame() {
+
+        generateTiles();
+
+        gameView.displayBoard(gameBoard);
 
 
+    }
+
+    private void generateTiles() {
+
+
+
+    }
 
 
 }

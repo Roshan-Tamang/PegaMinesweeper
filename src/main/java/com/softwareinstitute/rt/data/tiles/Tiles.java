@@ -8,6 +8,7 @@ public abstract class Tiles {
 
     private Flag flag = Flag.UNFLAGGED;
 
+
     public boolean isUntouched() {
         return isUntouched;
     }
