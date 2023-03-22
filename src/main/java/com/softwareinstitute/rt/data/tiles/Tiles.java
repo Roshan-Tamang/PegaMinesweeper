@@ -1,6 +1,8 @@
-package com.softwareinstitute.rt.data;
+package com.softwareinstitute.rt.data.tiles;
 
-public class Tiles {
+import com.softwareinstitute.rt.data.Flag;
+
+public abstract class Tiles {
 
     private boolean isUntouched = true;
 

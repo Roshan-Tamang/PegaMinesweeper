@@ -1,10 +1,12 @@
 package com.softwareinstitute.rt.data;
 
-public class GameBoard {
+public class Settings {
 
-    private int height;
-    private int width;
+    private int height= 4;
 
+    private int width = 4;
+
+    private Difficulty difficulty = Difficulty.LOW;
 
     public int getHeight() {
         return height;
@@ -22,9 +24,11 @@ public class GameBoard {
         this.width = width;
     }
 
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
 
-
-
-
-
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
+    }
 }

@@ -18,8 +18,6 @@ class GameViewTest {
         "1: Set the Board size\n"+
         "2: Set difficulty level",gameView.getMenu(),"The menu should match");
 
-
-
     }
 
 }

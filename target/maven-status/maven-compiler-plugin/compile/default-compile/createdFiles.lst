@@ -1,7 +1,12 @@
 com/softwareinstitute/rt/data/Flag.class
+com/softwareinstitute/rt/data/tiles/NumberedTiles.class
 com/softwareinstitute/rt/ui/GameView.class
+com/softwareinstitute/rt/data/tiles/CleanTiles.class
 com/softwareinstitute/rt/controller/GameController.class
+com/softwareinstitute/rt/data/tiles/Tiles.class
+com/softwareinstitute/rt/data/Difficulty.class
 com/softwareinstitute/rt/ui/ConsoleLogger.class
-com/softwareinstitute/rt/data/Tiles.class
+com/softwareinstitute/rt/data/tiles/MineTiles.class
 com/softwareinstitute/rt/GameLauncher.class
+com/softwareinstitute/rt/data/Settings.class
 com/softwareinstitute/rt/data/GameBoard.class

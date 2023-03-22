@@ -21,5 +21,11 @@ public class GameView {
         return null;
     }
 
+    public void displayBoard(){
+
+
+
+    }
+
 
 }

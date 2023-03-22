@@ -1,7 +1,7 @@
 package com.softwareinstitute.rt;
 
 import com.softwareinstitute.rt.data.Flag;
-import com.softwareinstitute.rt.data.Tiles;
+import com.softwareinstitute.rt.data.tiles.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,7 +11,7 @@ class TilesTest {
     @Test
     void testing_tiles_isUntouched(){
 
-        Tiles tiles = new Tiles();
+        Tiles tiles = new CleanTiles();
 
         assertTrue(tiles.isUntouched(),"Tile should be untouched when created");
 
@@ -20,7 +20,7 @@ class TilesTest {
     @Test
     void testing_tiles_setUntouched(){
 
-        Tiles tiles = new Tiles();
+        Tiles tiles = new CleanTiles();
 
         tiles.setUntouched(false);
 
@@ -31,7 +31,7 @@ class TilesTest {
     @Test
     void testing_tiles_Flag(){
 
-        Tiles tiles = new Tiles();
+        Tiles tiles = new CleanTiles();
 
         tiles.setFlag(Flag.FLAGGED);
 
