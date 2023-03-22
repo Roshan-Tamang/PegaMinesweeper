@@ -1,5 +1,6 @@
 package com.softwareinstitute.rt.controller;
 
+import com.softwareinstitute.rt.data.Difficulty;
 import com.softwareinstitute.rt.data.GameBoard;
 import com.softwareinstitute.rt.data.Settings;
 import com.softwareinstitute.rt.data.tiles.CleanTiles;
@@ -20,7 +21,7 @@ public class GameController {
 
         ConsoleLogger.printToConsole(gameView.getMenu());
 
-        int userChoice = 0;
+        int userChoice = gameView.enterCoordinates("Please make your selection!");
 
         switch (userChoice) {
             case 0:
@@ -28,13 +29,47 @@ public class GameController {
                 startGame();
                 break;
             case 1:
+                setTheBoardSize();
                 break;
             case 2:
+                setGameDifficulty();
                 break;
             default:
                 break;
         }
 
+    }
+
+    public void setGameDifficulty() {
+
+        int difficulty = gameView.enterCoordinates("Low/Default difficulty: Press 1\n" +
+                "Mid difficulty: Press 2\n" +
+                "High difficulty: Press 3");
+
+        switch (difficulty){
+            case 1:
+                Settings.setDifficulty(Difficulty.LOW);
+                break;
+            case 2:
+                Settings.setDifficulty(Difficulty.MEDIUM);
+                break;
+            case 3:
+                Settings.setDifficulty(Difficulty.HIGH);
+                break;
+            default:
+                break;
+        }
+
+
+    }
+
+    public void setTheBoardSize() {
+        int height = gameView.enterCoordinates("Please enter the new height");
+
+        int width = gameView.enterCoordinates("Please enter the new weight");
+
+        Settings.setHeight(height);
+        Settings.setWidth(width);
 
     }
 
@@ -44,8 +79,9 @@ public class GameController {
 
         generateTiles();
 
-        do {
+        int numOfTiles = gameBoard.getHeight()*gameBoard.getWidth();
 
+        for(int i=0; i<numOfTiles;i++){
             gameView.displayBoard(gameBoard, tiles);
 
             int x = gameView.enterCoordinates("Enter x coordinates");
@@ -56,18 +92,32 @@ public class GameController {
             chosenTile.setUntouched(false);
 
             exit = checkTypeOfTile(chosenTile);
+            if (exit) {
+                break;
+            } else if (i==numOfTiles-1) {
 
-        } while (exit);
+            }
+
+        }
 
     }
 
     public boolean checkTypeOfTile(Tiles tile) {
 
         if (tile.getClass().getSimpleName().equals("MineTiles")) {
-            return false;
+
+            for(int i = 0; i< gameBoard.getHeight();i++){
+                for(int l = 0; l< gameBoard.getWidth();l++){
+                    if(tiles[i][l].getClass().getSimpleName().equals("MineTiles")){
+                        tiles[i][l].setUntouched(false);
+                    }
+                }
+            }
+            gameView.gameOver(gameBoard,tiles);
+            return true;
         }
 
-        return true;
+        return false;
     }
 
     public int checkNumberOfMines(int x, int y) {
@@ -83,7 +133,6 @@ public class GameController {
                         }
                     }
                 }
-
             }
         }
 
@@ -96,7 +145,7 @@ public class GameController {
 
         int totalTiles = gameBoard.getHeight() * gameBoard.getWidth();
 
-        int mines = ((totalTiles / Settings.getDifficulty().getValue()));
+        int mines = ((totalTiles*Settings.getDifficulty().getValue())/100);
 
         for (int i = mines; i > 0; i--) {
 

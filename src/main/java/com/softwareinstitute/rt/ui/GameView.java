@@ -27,6 +27,7 @@ public class GameView {
         return null;
     }
 
+
     public void displayBoard(GameBoard gameBoard, Tiles[][] tiles) {
 
         StringBuilder board = new StringBuilder();
@@ -77,6 +78,13 @@ public class GameView {
 
     }
 
+    public void gameOver(GameBoard gameBoard, Tiles[][] tiles){
+        System.out.println("GAME OVER!");
+        displayBoard(gameBoard,tiles);
+    }
 
+    public void gameWon(){
+        System.out.println("Congratulations! You have won the game!");
+    }
 
 }
