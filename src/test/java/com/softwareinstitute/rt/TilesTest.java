@@ -1,6 +1,5 @@
 package com.softwareinstitute.rt;
 
-import com.softwareinstitute.rt.data.Flag;
 import com.softwareinstitute.rt.data.tiles.*;
 import org.junit.jupiter.api.Test;
 
@@ -28,16 +27,7 @@ class TilesTest {
 
     }
 
-    @Test
-    void testing_tiles_Flag(){
 
-        Tiles tiles = new CleanTiles();
-
-        tiles.setFlag(Flag.FLAGGED);
-
-        assertEquals(Flag.FLAGGED,tiles.getFlag(),"The Flag should match");
-
-    }
 
 
 }

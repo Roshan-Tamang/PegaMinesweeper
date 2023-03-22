@@ -1,6 +1,10 @@
 package com.softwareinstitute.rt.ui;
 
 import com.softwareinstitute.rt.data.GameBoard;
+import com.softwareinstitute.rt.data.tiles.CleanTiles;
+import com.softwareinstitute.rt.data.tiles.Tiles;
+
+import java.util.Scanner;
 
 public class GameView {
 
@@ -23,7 +27,7 @@ public class GameView {
         return null;
     }
 
-    public void displayBoard(GameBoard gameBoard) {
+    public void displayBoard(GameBoard gameBoard, Tiles[][] tiles) {
 
         StringBuilder board = new StringBuilder();
 
@@ -40,7 +44,15 @@ public class GameView {
         for (int i = 0; i < gameBoard.getHeight(); i++) {
             for (int l = 0; l < gameBoard.getWidth();l++){
                 board.append("|");
-                board.append("?");
+                if(tiles[i][l].isUntouched() && !(tiles[i][l].isFlagged())){
+                    board.append("?");
+                } else if (tiles[i][l].isUntouched() && tiles[i][l].isFlagged()) {
+                    board.append("F");
+                } else if (!(tiles[i][l].isUntouched()) && (tiles[i][l].getClass().getSimpleName().equals("MineTiles") )) {
+                   board.append("*");
+                } else if (!(tiles[i][l].isUntouched()) && (tiles[i][l].getClass().getSimpleName().equals("CleanTiles"))){
+                    CleanTiles cleanTiles = (CleanTiles) tiles[i][l];
+                    board.append(cleanTiles.getNumber());}
                 if(l== gameBoard.getWidth()-1){
                     board.append("|");
                     board.append(i);
@@ -52,6 +64,19 @@ public class GameView {
         }
 
     }
+
+    public int enterCoordinates(String message){
+
+        System.out.println(message);
+
+        Scanner sc = new Scanner(System.in);
+
+        int userChoice = sc.nextInt();
+
+        return userChoice;
+
+    }
+
 
 
 }

@@ -1,13 +1,10 @@
 package com.softwareinstitute.rt.data.tiles;
 
-import com.softwareinstitute.rt.data.Flag;
-
 public abstract class Tiles {
 
     private boolean isUntouched = true;
 
-    private Flag flag = Flag.UNFLAGGED;
-
+    private boolean isFlagged = false;
 
     public boolean isUntouched() {
         return isUntouched;
@@ -17,11 +14,10 @@ public abstract class Tiles {
         isUntouched = untouched;
     }
 
-    public Flag getFlag() {
-        return flag;
+    public boolean isFlagged() {
+        return isFlagged;
     }
-
-    public void setFlag(Flag flag) {
-        this.flag = flag;
+    public void setFlagged(boolean flagged) {
+        isFlagged = flagged;
     }
 }
