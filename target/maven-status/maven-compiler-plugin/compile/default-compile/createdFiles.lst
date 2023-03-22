@@ -1,1 +1,5 @@
+com/softwareinstitute/rt/ConsoleLogger.class
+com/softwareinstitute/rt/Tiles.class
+com/softwareinstitute/rt/GameBoard.class
 com/softwareinstitute/rt/GameLauncher.class
+com/softwareinstitute/rt/GameController.class
