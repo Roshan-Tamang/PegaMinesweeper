@@ -3,14 +3,11 @@ package com.softwareinstitute.rt;
 public class GameLauncher {
     public static void main(String[] args) {
 
-        String message = callHelloWorld();
+       GameController gameController = new GameController();
+
+       gameController.run();
 
     }
 
-    public static String callHelloWorld() {
 
-        return "Hello world - Minesweeper";
-
-
-    }
 }

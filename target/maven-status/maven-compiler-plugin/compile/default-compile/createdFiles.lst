@@ -1,6 +1,7 @@
-com/softwareinstitute/rt/ConsoleLogger.class
+com/softwareinstitute/rt/GameBoard.class
+com/softwareinstitute/rt/ui/GameView.class
 com/softwareinstitute/rt/Tiles.class
 com/softwareinstitute/rt/Flag.class
-com/softwareinstitute/rt/GameBoard.class
+com/softwareinstitute/rt/ui/ConsoleLogger.class
 com/softwareinstitute/rt/GameLauncher.class
 com/softwareinstitute/rt/GameController.class

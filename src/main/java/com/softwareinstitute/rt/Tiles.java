@@ -4,7 +4,7 @@ public class Tiles {
 
     private boolean isUntouched = true;
 
-    private Flag flag;
+    private Flag flag = Flag.UNFLAGGED;
 
     public boolean isUntouched() {
         return isUntouched;
