@@ -1,5 +1,4 @@
 /Users/roshantamang/Documents/TheSoftwareInstitute/JavaPractice/Minesweeper/src/main/java/com/softwareinstitute/rt/GameLauncher.java
-/Users/roshantamang/Documents/TheSoftwareInstitute/JavaPractice/Minesweeper/src/main/java/com/softwareinstitute/rt/data/Flag.java
 /Users/roshantamang/Documents/TheSoftwareInstitute/JavaPractice/Minesweeper/src/main/java/com/softwareinstitute/rt/data/tiles/MineTiles.java
 /Users/roshantamang/Documents/TheSoftwareInstitute/JavaPractice/Minesweeper/src/main/java/com/softwareinstitute/rt/data/tiles/Tiles.java
 /Users/roshantamang/Documents/TheSoftwareInstitute/JavaPractice/Minesweeper/src/main/java/com/softwareinstitute/rt/data/Settings.java
@@ -8,5 +7,4 @@
 /Users/roshantamang/Documents/TheSoftwareInstitute/JavaPractice/Minesweeper/src/main/java/com/softwareinstitute/rt/data/Difficulty.java
 /Users/roshantamang/Documents/TheSoftwareInstitute/JavaPractice/Minesweeper/src/main/java/com/softwareinstitute/rt/data/tiles/CleanTiles.java
 /Users/roshantamang/Documents/TheSoftwareInstitute/JavaPractice/Minesweeper/src/main/java/com/softwareinstitute/rt/ui/GameView.java
-/Users/roshantamang/Documents/TheSoftwareInstitute/JavaPractice/Minesweeper/src/main/java/com/softwareinstitute/rt/data/tiles/NumberedTiles.java
 /Users/roshantamang/Documents/TheSoftwareInstitute/JavaPractice/Minesweeper/src/main/java/com/softwareinstitute/rt/data/GameBoard.java

@@ -1,5 +1,3 @@
-com/softwareinstitute/rt/data/Flag.class
-com/softwareinstitute/rt/data/tiles/NumberedTiles.class
 com/softwareinstitute/rt/ui/GameView.class
 com/softwareinstitute/rt/data/tiles/CleanTiles.class
 com/softwareinstitute/rt/controller/GameController.class

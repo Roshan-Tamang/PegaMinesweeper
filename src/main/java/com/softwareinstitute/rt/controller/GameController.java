@@ -46,7 +46,7 @@ public class GameController {
                 "Mid difficulty: Press 2\n" +
                 "High difficulty: Press 3");
 
-        switch (difficulty){
+        switch (difficulty) {
             case 1:
                 Settings.setDifficulty(Difficulty.LOW);
                 break;
@@ -79,9 +79,9 @@ public class GameController {
 
         generateTiles();
 
-        int numOfTiles = gameBoard.getHeight()*gameBoard.getWidth();
+        int numOfTiles = gameBoard.getHeight() * gameBoard.getWidth();
 
-        for(int i=0; i<numOfTiles;i++){
+        for (int i = 0; i < numOfTiles; i++) {
             gameView.displayBoard(gameBoard, tiles);
 
             int x = gameView.enterCoordinates("Enter x coordinates");
@@ -94,7 +94,7 @@ public class GameController {
             exit = checkTypeOfTile(chosenTile);
             if (exit) {
                 break;
-            } else if (i==numOfTiles-1) {
+            } else if (i == numOfTiles - 1) {
 
             }
 
@@ -106,14 +106,14 @@ public class GameController {
 
         if (tile.getClass().getSimpleName().equals("MineTiles")) {
 
-            for(int i = 0; i< gameBoard.getHeight();i++){
-                for(int l = 0; l< gameBoard.getWidth();l++){
-                    if(tiles[i][l].getClass().getSimpleName().equals("MineTiles")){
+            for (int i = 0; i < gameBoard.getHeight(); i++) {
+                for (int l = 0; l < gameBoard.getWidth(); l++) {
+                    if (tiles[i][l].getClass().getSimpleName().equals("MineTiles")) {
                         tiles[i][l].setUntouched(false);
                     }
                 }
             }
-            gameView.gameOver(gameBoard,tiles);
+            gameView.gameOver(gameBoard, tiles);
             return true;
         }
 
@@ -125,17 +125,16 @@ public class GameController {
         int numberOfMines = 0;
 
         for (int i = -1; i < 2; i++) {
-            if (x < 0 && x > gameBoard.getHeight()) {
-                for (int l = -1; l < 2; l++) {
-                    if (y < 0 && y > gameBoard.getWidth()) {
-                        if (tiles[x + i][y + l].getClass().getSimpleName().equals("MineTiles")) {
-                            numberOfMines++;
+            for (int l = -1; l < 2; l++) {
+                if ((x + i >= 0) && (x + i < gameBoard.getHeight())) {
+                    if ((y + l >= 0) && (y + l < gameBoard.getWidth())) {
+                        if (!(tiles[x + i][y + l] == null) && (tiles[x + i][y + l].getClass().getSimpleName().equals("MineTiles"))) {
+                            numberOfMines += 1;
                         }
                     }
                 }
             }
         }
-
         return numberOfMines;
     }
 
@@ -145,7 +144,7 @@ public class GameController {
 
         int totalTiles = gameBoard.getHeight() * gameBoard.getWidth();
 
-        int mines = ((totalTiles*Settings.getDifficulty().getValue())/100);
+        int mines = ((totalTiles * Settings.getDifficulty().getValue()) / 100);
 
         for (int i = mines; i > 0; i--) {
 
